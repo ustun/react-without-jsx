@@ -25,6 +25,7 @@ convenient thanks to the destructuring operator in ES6. This repo presents
 nothing new, but given that there have been a flux of new comers recently to
 React, most people might not know React is this convenient even without JSX.
 
+## Technique 1: Using React.DOM and React.createFactory
 Two rules:
 
 - Require DOM elements using destructuring assignment and use them like normal functions.
@@ -104,6 +105,43 @@ module.exports = MyParentElement;
 
 ```
 
+## Technique 2: Using React.createElement as h
+
+This was suggested by @jacksonrayhamilton and I actually think it is superior, just use React.createElement. To save typing, give it a short name like h.
+
+```js
+var React = require('react');
+var ReactDOM = require('react-dom');
+var h = React.createElement;
+
+var OtherComponent = React.createClass({
+  render: function () {
+    return (
+      h('div', {className: 'example'}, 'Greetings.')
+    );
+  }
+});
+
+var ExampleComponent = React.createClass({
+  render: function () {
+    var h = React.createElement;
+    return (
+      h('div', {className: 'example', style: {color: 'red'}},
+        h('h1', null, 'Example Component'),
+        h('ul', null,
+          h('li', null, 'One item'),
+          h('li', null, 'Another item')
+         ),
+        h(OtherComponent)
+       )
+    );
+  }
+});
+
+ReactDOM.render(h(ExampleComponent), document.body);
+
+```
+
 ## Example
 
 This repo includes a few files demoing this.
@@ -116,7 +154,7 @@ Example uses using React in node, but obviously this technique works in the brow
 
 One surprising thing React does for performance is, if the props is an empty object, it uses null instead of `{}`. You may try reverting that for aesthetic reasons, but probably shouldn't.
 
-That said, here is an alternative project called hyperscript that gets rids of nulls, and combines children into arrays: 
+That said, here is an alternative project called hyperscript that gets rids of nulls, and combines children into arrays:
 
 https://github.com/ohanhi/hyperscript-helpers
 
