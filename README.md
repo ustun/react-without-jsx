@@ -123,29 +123,21 @@ var h = React.createElement;
 
 var OtherComponent = React.createClass({
   render: function () {
-    return (
-      h('div', {className: 'example'}, 'Greetings.')
-    );
+    return h('div', {className: 'example'}, 'Greetings.');
   }
 });
 
 var ExampleComponent = React.createClass({
   render: function () {
     var h = React.createElement;
-    return (
-      h('div', {className: 'example', style: {color: 'red'}},
-        h('h1', null, 'Example Component'),
-        h('ul', null,
-          h('li', null, 'One item'),
-          h('li', null, 'Another item')
-         ),
-        h(OtherComponent)
-       )
-    );
+    return h('div', {className: 'example', style: {color: 'red'}},
+             h('h1', null, 'Example Component'),
+             h('ul', null,
+               h('li', null, 'One item'),
+               h('li', null, 'Another item')),
+             h(OtherComponent));
   }
 });
-
-ReactDOM.render(h(ExampleComponent), document.body);
 
 ```
 
