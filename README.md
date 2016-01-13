@@ -41,7 +41,7 @@ var MyElement = React.createClass({
                    h1(null, 'Hello ' + this.props.name)
                    ul(null,
                       li(null, a({href: "http://cnn.com"}, "CNN")),
-                      li(null, a({href: "http://bbc.com}))));
+                      li(null, a({href: "http://bbc.com"}, "BBC"))));
    }
 });
 ```
