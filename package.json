@@ -1,0 +1,24 @@
+{
+  "name": "react-without-jsx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.4.0",
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "webpack": "^1.12.11"
+  },
+  "scripts": {
+      "example": "babel-node  index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ustun Ozgur <ustun@ustunozgur.com> (https://github.com/ustun)",
+  "license": "ISC"
+}
