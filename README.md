@@ -107,7 +107,9 @@ module.exports = MyParentElement;
 
 ## Technique 2: Using React.createElement as h
 
-This was suggested by @jacksonrayhamilton and I actually think it is superior, just use React.createElement. To save typing, give it a short name like h.
+This was suggested by https://github.com/jacksonrayhamilton and I actually think it is superior, just use React.createElement. To save typing, give it a short name like h.
+
+React.createElement allows you to create DOM elements and components using the same interface.
 
 ```js
 var React = require('react');
