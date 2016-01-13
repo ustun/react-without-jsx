@@ -38,13 +38,32 @@ The first argument is an object containing props (or null if empty), the rest ar
 var MyElement = React.createClass({
     render() {
         return div({style: {color: 'red'}},
-                   h1(null, 'Hello ' + this.props.name)
+                   h1(null, 'Hello ' + this.props.name),
                    ul(null,
                       li(null, a({href: "http://cnn.com"}, "CNN")),
                       li(null, a({href: "http://bbc.com"}, "BBC"))));
    }
 });
 ```
+
+So, the full file is the following:
+```js
+var React = require('react');
+var {div, h1, ul, li, a} = React.DOM;
+
+var MyElement = React.createClass({
+    render() {
+        return div({style: {color: 'red'}},
+                   h1(null, 'Hello ' + this.props.name),
+                   ul(null,
+                      li(null, a({href: "http://cnn.com"}, "CNN")),
+                      li(null, a({href: "http://bbc.com"}, "BBC"))));
+   }
+});
+
+module.exports = MyElement;
+```
+
 
 - When using custom React elements, immediately transform them via `React.createFactory` before using.
 
@@ -60,6 +79,29 @@ var MyParentElement = React.createClass({
     }
 
 });
+```
+
+The full file is the following:
+
+```js
+var React = require('react');
+
+var MyElement = React.createFactory(require('./MyElement'));
+var {div} = React.DOM;
+
+var MyParentElement = React.createClass({
+    render() {
+        return div(null,
+                   MyElement({name: 'John'}),
+                   MyElement({name: 'Mary'}));
+
+    }
+
+});
+
+
+module.exports = MyParentElement;
+
 ```
 
 ## Example
