@@ -26,6 +26,9 @@ nothing new, but given that there have been a flux of new comers recently to
 React, most people might not know React is this convenient even without JSX.
 
 ## Technique 1: Using React.DOM and React.createFactory
+
+Note: This is the initial technique, but not the preferred one. See Technique 2 below for a better approach. But this one is easier to grasp initially.
+
 Two rules:
 
 - Require DOM elements using destructuring assignment and use them like normal functions.
@@ -110,6 +113,8 @@ module.exports = MyParentElement;
 This was suggested by https://github.com/jacksonrayhamilton and I actually think it is superior, just use React.createElement. To save typing, give it a short name like h.
 
 React.createElement allows you to create DOM elements and components using the same interface.
+
+Also, a nice little hack: If you use 2-space indentation and a single letter abbreviation (like `h`, nested elements are indented as you intend.
 
 ```js
 var React = require('react');
