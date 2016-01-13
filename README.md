@@ -129,7 +129,6 @@ var OtherComponent = React.createClass({
 
 var ExampleComponent = React.createClass({
   render: function () {
-    var h = React.createElement;
     return h('div', {className: 'example', style: {color: 'red'}},
              h('h1', null, 'Example Component'),
              h('ul', null,
