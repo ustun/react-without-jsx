@@ -115,3 +115,9 @@ Example uses using React in node, but obviously this technique works in the brow
 ## Tradeoffs
 
 One surprising thing React does for performance is, if the props is an empty object, it uses null instead of `{}`. You may try reverting that for aesthetic reasons, but probably shouldn't.
+
+That said, here is an alternative project called hyperscript that gets rids of nulls, and combines children into arrays: 
+
+https://github.com/ohanhi/hyperscript-helpers
+
+https://github.com/mlmorg/react-hyperscript
