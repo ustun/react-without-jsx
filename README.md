@@ -111,3 +111,7 @@ This repo includes a few files demoing this.
 Just do an `npm install` followed by `npm run example`
 
 Example uses using React in node, but obviously this technique works in the browser too.
+
+## Tradeoffs
+
+One surprising thing React does for performance is, if the props is an empty object, it uses null instead of `{}`. You may try reverting that for aesthetic reasons, but probably shouldn't.
