@@ -121,3 +121,5 @@ That said, here is an alternative project called hyperscript that gets rids of n
 https://github.com/ohanhi/hyperscript-helpers
 
 https://github.com/mlmorg/react-hyperscript
+
+For CoffeeScript, see https://github.com/kalasjocke/react-coffee-elements
