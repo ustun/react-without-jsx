@@ -140,6 +140,30 @@ var ExampleComponent = React.createClass({
 
 ```
 
+Or, using ES6:
+
+```js
+import {createElement as h, createClass } from 'react';
+
+const OtherComponent = createClass({
+  render() {
+    return h('div', {className: 'example'}, 'Greetings.');
+  }
+});
+
+const ExampleComponent = createClass({
+  render() {
+    return h('div', {className: 'example', style: {color: 'red'}},
+      h('h1', null, 'Example Component'),
+      h('ul', null,
+      h('li', null, 'One item'),
+      h('li', null, 'Another item')),
+      h(OtherComponent)
+    );
+  }
+});
+```
+
 ## Example
 
 This repo includes a few files demoing this.
